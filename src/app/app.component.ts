@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [RouterOutlet, RouterLinkWithHref],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div>
       <a href="https://vitejs.dev" target="_blank">
@@ -33,6 +36,14 @@ import { Component } from '@angular/core';
     <p class="read-the-docs">
       Click on the Vite and Angular logos to learn more.
     </p>
+
+    <div class="routes">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/some-page">Some Page</a>
+    </div>
+
+    <router-outlet></router-outlet>
   `,
   styles: [
     `
@@ -56,6 +67,11 @@ import { Component } from '@angular/core';
       }
       .read-the-docs {
         color: #888;
+      }
+      .routes {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
       }
     `,
   ],

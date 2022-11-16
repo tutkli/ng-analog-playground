@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {defineRouteMeta} from '@analogjs/router';
+import {CounterComponent} from '../shared/components/counter.component';
 
 export const routeMeta = defineRouteMeta({
   title: 'Analog Home',
@@ -14,7 +15,12 @@ export const routeMeta = defineRouteMeta({
   template: `
     <h2>Analog Home</h2>
 
-    Welcome to the Analog application.
+    <p>Welcome to Analog.</p>
+
+    <app-counter></app-counter>
   `,
+  imports: [
+    CounterComponent
+  ]
 })
 export default class HomePageComponent {}

@@ -22,19 +22,11 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 
     <h1>Vite + Angular</h1>
 
-    <div class="card">
-      <button type="button" (click)="increment()">Count {{ count }}</button>
-    </div>
-
     <p>
       Check out
       <a href="https://github.com/analogjs/analog#readme" target="_blank"
         >Analog</a
       >, the fullstack meta-framework for Angular powered by Vite!
-    </p>
-
-    <p class="read-the-docs">
-      Click on the Vite and Angular logos to learn more.
     </p>
 
     <div class="routes">
@@ -59,15 +51,15 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
         padding: 1.5em;
         will-change: filter;
       }
+
       .logo:hover {
         filter: drop-shadow(0 0 2em #646cffaa);
       }
+
       .logo.angular:hover {
-        filter: drop-shadow(0 0 2em #42b883aa);
+        filter: drop-shadow(0 0 2em rgba(234, 4, 4, 0.67));
       }
-      .read-the-docs {
-        color: #888;
-      }
+
       .routes {
         display: flex;
         justify-content: center;
@@ -76,10 +68,4 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
     `,
   ],
 })
-export class AppComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
-}
+export class AppComponent {}
